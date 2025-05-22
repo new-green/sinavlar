@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Metin Girin</h1>
+    <textarea id="inputt"></textarea><br>
+    <p id="karakterSayisi"></p>
+    <p id="kelimeSayisi"></p>
+    <p id="kalanKarakterSayisi"></p>
+    <script>
+const metin = document.getElementById("inputt");
+const karakterSayisi = document.getElementById("karakterSayisi");
+const kelimeSayisi = document.getElementById("kelimeSayisi");
+const kalanKarakterSayisi = document.getElementById("kalanKarakterSayisi");
+
+const maxUzunluk = 100;
+
+metin.addEventListener("input", function () {
+    const metin2 = metin.value;
+    const karakter2 = metin2.length;
+    const kelime2 = metin2.trim().split(/\s+/).filter(Boolean).length;
+    const kalan2 = maxUzunluk - karakter2;
+
+    karakterSayisi.textContent = karakter2 + " karakter";
+    kelimeSayisi.textContent = kelime2 + " kelime";
+    kalanKarakterSayisi.textContent = kalan2 + " karakter kaldı";
+});
+
+    </script>
+</body>
+</html>

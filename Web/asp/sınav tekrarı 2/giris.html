@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+        <input type="text" id="adSoyad" placeholder="Ad Soyad"><br>
+        <input type="email" id="eposta" placeholder="E-Posta"><br>
+        <input type="password" id="pas1" placeholder="Şifre"><br>
+        <input type="password" id="pas2" placeholder="Şifre Tekrar"><br>
+        <button onclick="kayit()">Gönder</button><br>
+        <p id="sonuc"></p>
+    <script>
+        function kayit() {
+      const adSoyad = document.getElementById("adSoyad").value;
+      const eposta = document.getElementById("eposta").value;
+      const pas1 = document.getElementById("pas1").value;
+      const pas2 = document.getElementById("pas2").value;
+
+      if (!adSoyad || !eposta || !pas1 || !pas2) {
+        alert("Lütfen tüm alanları doldurun.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Şifreler eşleşmiyor!");
+        return;
+      }
+
+      // Başarılı kayıt simülasyonu
+      alert("Kayıt başarılı!");
+    }
+    </script>
+</body>
+</html>

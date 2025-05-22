@@ -23,6 +23,29 @@
 
     <script>
         $(document).ready(function(){
+            $("#islem1").click(function(){
+                $("span").css({
+                    "backgroundColor": "tomato",
+                    "color": "white"
+                })})
+            $("#islem2").click(function(){
+                $("#kutu2").before("<span>Yeni<br>Kutu</span>")
+            })
+            $("#islem3").click(function(){
+                $("#kutu2").after("<span>Yeni<br>Kutu</span>")
+            })
+            $("#islem4").click(function(){
+                $("#cerceve").prepend("<span>Yeni<br>Kutu</span>")
+            })
+            $("#islem5").click(function(){
+                $("#cerceve").append("<span>Yeni<br>Kutu</span>")
+            })
+            $("#islem6").click(function(){
+                $("#kutu4").empty()
+            })
+            $("#islem7").click(function(){
+                $("#kutu4").remove()
+            })
             
         })
     </script>

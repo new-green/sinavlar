@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Zamanlayıcı</title>
+</head>
+<body style="text-align: center; font-family: Arial; margin-top: 100px;">
+  <h2>Zamanlayıcı</h2>
+  <input type="number" id="dakika" value="30"><br><br>
+  <button onclick="baslat()">Başlat</button>
+  <button onclick="durdur()">Durdur</button><br><br>
+  <button onclick="sifirla()">Sıfırla</button>
+  <h1 id="gosterge">00:00</h1>
+
+  <script>
+    let kalan = 0;
+    let zamanlayici;
+
+    function formatla(s) {
+      let dk = Math.floor(s / 60);
+      let sn = s % 60;
+      return `${dk.toString().padStart(2, '0')}:${sn.toString().padStart(2, '0')}`;
+    }
+
+    function baslat() {
+      if (!kalan) kalan = parseInt(document.getElementById("dakika").value) * 60;
+
+      zamanlayici = setInterval(() => {
+        if (kalan <= 0) {
+          clearInterval(zamanlayici);
+          alert("Süre doldu!");
+        } else {
+          kalan--;
+          document.getElementById("gosterge").textContent = formatla(kalan);
+        }
+      }, 1000);
+    }
+
+    function durdur() {
+      clearInterval(zamanlayici);
+    }
+
+    function sifirla() {
+      clearInterval(zamanlayici);
+      kalan = 0;
+      document.getElementById("gosterge").textContent = "00:00";
+    }
+  </script>
+</body>
+</html>
